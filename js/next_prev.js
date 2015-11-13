@@ -36,7 +36,7 @@
             var res = "";
             var slash_pos = url.lastIndexOf("/");
             if (slash_pos != -1) {
-                res = url.slice(slash_pos, url.lenght - 1);
+                res = url.slice(slash_pos + 1, url.length - 1);
             }
             return res;
         }
@@ -44,7 +44,6 @@
         var next_link = document.getElementById("next_link");
         if (next_link != null) {
             var id = getIdFromUrl(next_link.href);
-            alert(next_link.href);
             if (id != "") {
                 var url = url_base + id;
                 $.getJSON(url, function(data) {
