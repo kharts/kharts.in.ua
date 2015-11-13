@@ -28,7 +28,7 @@
                 case "answer":
                     title = post['question'];
                 default:
-                    title = 0;
+                    title = "";
             }
             return title;
         }
@@ -50,6 +50,7 @@
                     title = "";
                     $(data.posts).each(function(i, post) {
                         title = getTitle(post);
+                        alert(title);
                     })
                 var next_title = document.getElementById("next_title");
                 next_title.innerHTML = title;
