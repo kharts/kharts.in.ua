@@ -44,7 +44,7 @@
         var next_link = document.getElementById("next_link");
         if (next_link != null) {
             var id = getIdFromUrl(next_link.href);
-            alert(id);
+            alert(next_link.href);
             if (id != "") {
                 var url = url_base + id;
                 $.getJSON(url, function(data) {
