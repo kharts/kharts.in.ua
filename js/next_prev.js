@@ -36,7 +36,7 @@
             var res = "";
             var slash_pos = url.lastIndexOf("/");
             if (slash_pos != -1) {
-                res = url.slice(slash_pos + 1, url.length - 1);
+                res = url.slice(slash_pos + 1, url.length);
             }
             return res;
         }
