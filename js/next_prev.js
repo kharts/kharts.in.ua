@@ -40,18 +40,16 @@
             }
             return res;
         }
-        var url_base = "http://" + document.domain + "/api/read/json?callback=?&id="
+        var url_base = "http://" + document.domain + "/api/read/json?callback=?&id=";
         var next_link = document.getElementById("next_link");
         if (next_link != null) {
             var id = getIdFromUrl(next_link.href);
-            alert(id);
             if (id != "") {
                 var url = url_base + id;
                 $.getJSON(url, function(data) {
                     title = "";
                     $(data.posts).each(function(i, post) {
                         title = getTitle(post);
-                        alert(title);
                     })
                 var next_title = document.getElementById("next_title");
                 next_title.innerHTML = title;
