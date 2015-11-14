@@ -7,8 +7,8 @@
                 $(data.posts).each(function(i, post) {
                     var title = getTitle(post);
                     var link = "<a href='" + post.url + "'>" + title + "</a>";
-                    var paragraph = "<p>" + link + "</p>";
-                    latest_posts.innerHTML = latest_posts.innerHTML + paragraph;
+                    var list_element = "<li>" + link + "</li>";
+                    latest_posts.innerHTML = latest_posts.innerHTML + list_element;
                 });
             });
         };
