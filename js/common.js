@@ -24,6 +24,7 @@ function getTitle(post) {
             break;
         case "answer":
             title = post['question'];
+            break;
         default:
             title = "";
     }
