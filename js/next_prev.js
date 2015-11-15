@@ -15,7 +15,11 @@
                 })
             }
         }
-        var url_base = "http://" + document.domain + "/api/read/json?callback=?&id=";
+        var domain = "kharts.in.ua";
+        if (document.domain != "") {
+            domain = document.domain;
+        }
+        var url_base = "http://" + domain + "/api/read/json?callback=?&id=";
         var next_link = document.getElementById("next_link");
         if (next_link != null) {
             fillTitle(next_link.href, "next_title");
