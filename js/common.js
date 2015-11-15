@@ -46,7 +46,7 @@ function cutTitle(title) {
         while ((i < title.length) && (chars.indexOf(title[i]) == -1 )) {
             i++;
         }
-        title = title.slice(1, i);
+        title = title.slice(1, i) + "...";
     }
     return title;
 }
