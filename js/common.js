@@ -27,7 +27,7 @@ function getTitle(post) {
         default:
             title = "";
     }
-    return title;
+    return cutTitle(title);
 }
 
 function getIdFromUrl(url) {
@@ -37,4 +37,16 @@ function getIdFromUrl(url) {
         res = url.slice(slash_pos + 1, url.length);
     }
     return res;
+}
+
+function cutTitle(title) {
+    chars = " .,;:"
+    if (title.length > 100) {
+        i = 100;
+        while ((i < title.length) && (chars.indexOf(title[i]) == -1 )) {
+            i++;
+        }
+        title = title.slice(1, i);
+    }
+    return title;
 }
