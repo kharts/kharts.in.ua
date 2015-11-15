@@ -42,8 +42,8 @@ function getIdFromUrl(url) {
 
 function cutTitle(title) {
     chars = " .,;:"
-    if (title.length > 100) {
-        i = 100;
+    if (title.length > 140) {
+        i = 140;
         while ((i < title.length) && (chars.indexOf(title[i]) == -1 )) {
             i++;
         }
