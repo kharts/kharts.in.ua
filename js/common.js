@@ -3,6 +3,9 @@ function getTitle(post) {
     switch (post.type) {
         case "regular":
             title = post['regular-title'];
+            if (title === "") {
+                title = extractTextBetweenH1Tags(post['regular-body']);
+            }
             break;
         case "link":
             title = post['link-text'];
@@ -38,6 +41,33 @@ function getIdFromUrl(url) {
         res = url.slice(slash_pos + 1, url.length);
     }
     return res;
+}
+
+function extractTextBetweenH1Tags(inputString) {
+  // Define a regular expression to match <h1>...</h1> tags and capture the content in between.
+  const regex = /<h1>(.*?)<\/h1>/gi;
+
+  // Use the match method to find all matches in the input string.
+  const matches = inputString.match(regex);
+
+  // Check if any matches were found.
+  if (matches) {
+    // Initialize an array to store the extracted text.
+    const extractedText = [];
+
+    // Loop through the matches and extract the content between <h1> and </h1> tags.
+    for (const match of matches) {
+      // Use a regular expression to extract the text between <h1> and </h1> tags.
+      const text = match.replace(/<h1>|<\/h1>/gi, '');
+      extractedText.push(text);
+    }
+
+    // Return the array of extracted text.
+    return extractedText;
+  } else {
+    // Return null if no matches were found.
+    return null;
+  }
 }
 
 function cutTitle(title) {
